@@ -1,4 +1,4 @@
-using Atya.Foundation.Primitives.Errors;
+using Atya.Foundation.Results;
 
 namespace Atya.Data.Pagination;
 
@@ -37,33 +37,33 @@ public static class PaginationErrors
     /// </summary>
     /// <returns>The validation error.</returns>
     public static Error PageNumberMustBePositive() =>
-        Error.Create(PageNumberMustBePositiveCode, "Page number must be greater than zero.");
+        new(PageNumberMustBePositiveCode, "Page number must be greater than zero.", ErrorKind.Validation);
 
     /// <summary>
     /// Creates the page size validation error.
     /// </summary>
     /// <returns>The validation error.</returns>
     public static Error PageSizeMustBePositive() =>
-        Error.Create(PageSizeMustBePositiveCode, "Page size must be greater than zero.");
+        new(PageSizeMustBePositiveCode, "Page size must be greater than zero.", ErrorKind.Validation);
 
     /// <summary>
     /// Creates the offset overflow validation error.
     /// </summary>
     /// <returns>The validation error.</returns>
     public static Error OffsetMustFitInt32() =>
-        Error.Create(OffsetMustFitInt32Code, "The requested page offset must fit in a 32-bit signed integer.");
+        new(OffsetMustFitInt32Code, "The requested page offset must fit in a 32-bit signed integer.", ErrorKind.Validation);
 
     /// <summary>
     /// Creates the total count validation error.
     /// </summary>
     /// <returns>The validation error.</returns>
     public static Error TotalCountMustNotBeNegative() =>
-        Error.Create(TotalCountMustNotBeNegativeCode, "Total count must not be negative.");
+        new(TotalCountMustNotBeNegativeCode, "Total count must not be negative.", ErrorKind.Validation);
 
     /// <summary>
     /// Creates the item count validation error.
     /// </summary>
     /// <returns>The validation error.</returns>
     public static Error ItemCountMustNotExceedPageSize() =>
-        Error.Create(ItemCountMustNotExceedPageSizeCode, "Item count must not exceed page size.");
+        new(ItemCountMustNotExceedPageSizeCode, "Item count must not exceed page size.", ErrorKind.Validation);
 }

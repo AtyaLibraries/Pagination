@@ -20,11 +20,6 @@
           "System.Management": "9.0.5"
         }
       },
-      "Atya.Foundation.Abstractions": {
-        "type": "Transitive",
-        "resolved": "1.0.3",
-        "contentHash": "sfh4BEtjvlXzB3fDCfdgDdiZUmxhSAp3aVyIJKH01x2ycJnkOAgKKNTEAEeWDRXcLjdUJHPsjVILzuPEQvezYQ=="
-      },
       "BenchmarkDotNet.Annotations": {
         "type": "Transitive",
         "resolved": "0.15.8",
@@ -175,7 +170,7 @@
         "type": "Project",
         "dependencies": {
           "Atya.Foundation.Guards": "[1.0.2, )",
-          "Atya.Foundation.Primitives": "[1.0.2, )"
+          "Atya.Foundation.Results": "[1.1.0, )"
         }
       },
       "Atya.Foundation.Guards": {
@@ -184,15 +179,11 @@
         "resolved": "1.0.2",
         "contentHash": "pK0hllKNECWmAK1XInrp94OSon9NFnbkPL/P37WzUD1riSR/AuaeRo0/VkPP8fw6KuAR3IrqsIHNv2l+soKBhA=="
       },
-      "Atya.Foundation.Primitives": {
+      "Atya.Foundation.Results": {
         "type": "CentralTransitive",
-        "requested": "[1.0.2, )",
-        "resolved": "1.0.2",
-        "contentHash": "Y4N0+/PPUYSRB2n7r2ydaeiW8A5fYubjRvaWNoOc4C6XkK2bUCCZd4fzK8ZTpeiqs4APNFMFH3fdNO1Cc70zNA==",
-        "dependencies": {
-          "Atya.Foundation.Abstractions": "1.0.3",
-          "Atya.Foundation.Guards": "1.0.0"
-        }
+        "requested": "[1.1.0, )",
+        "resolved": "1.1.0",
+        "contentHash": "7u4kPGnVubYn10agEOOxfMbN6GRLXpdtAMSCcCDvnNhSx4tdhrdrNf2AXKdNX+GP0Ekm6PSTsWlHMuZYMdFUYQ=="
       }
     }
   }

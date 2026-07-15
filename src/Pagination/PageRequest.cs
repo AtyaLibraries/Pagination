@@ -1,5 +1,4 @@
-using Atya.Foundation.Primitives.Results;
-using PrimitivePagedRequest = Atya.Foundation.Primitives.Paging.PagedRequest;
+using Atya.Foundation.Results;
 
 namespace Atya.Data.Pagination;
 
@@ -71,10 +70,4 @@ public sealed record PageRequest
 
         return Result.Success(new PageRequest(pageNumber, pageSize));
     }
-
-    /// <summary>
-    /// Converts this request to the Foundation.Primitives paging shape.
-    /// </summary>
-    /// <returns>The equivalent primitive paged request.</returns>
-    public PrimitivePagedRequest ToPrimitiveRequest() => new(PageNumber, PageSize);
 }

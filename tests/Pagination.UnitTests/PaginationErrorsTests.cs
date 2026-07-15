@@ -1,4 +1,4 @@
-using Atya.Foundation.Primitives.Errors;
+using Atya.Foundation.Results;
 
 namespace Atya.Data.Pagination.UnitTests;
 
@@ -12,6 +12,7 @@ public sealed class PaginationErrorsTests
 
         error.Code.Should().Be(expectedCode);
         error.Message.Should().NotBeNullOrWhiteSpace();
+        error.Kind.Should().Be(ErrorKind.Validation);
     }
 
     public static TheoryData<Func<Error>, string> ErrorFactories() =>

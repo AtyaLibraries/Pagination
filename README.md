@@ -18,8 +18,7 @@
 
 - `PageRequest` models one-based page number and positive page size values.
 - `PagedResult<T>` carries page items, total count, total pages, and previous/next flags.
-- Invalid page input returns `Result<T>` from `Atya.Foundation.Primitives` instead of throwing for expected caller mistakes.
-- `PageRequest.ToPrimitiveRequest()` bridges to the existing Foundation.Primitives paging shape.
+- Invalid page input returns `Result<T>` from `Atya.Foundation.Results` instead of throwing for expected caller mistakes.
 
 ## Installation
 
@@ -69,7 +68,7 @@ Console.WriteLine($"Has next page: {page.Value.HasNextPage}");
 
 ## Why These Dependencies
 
-`Atya.Foundation.Guards` handles programmer errors such as null `items` and null validated requests. `Atya.Foundation.Primitives` supplies the fleet's primitive `Result<T>`, `Error`, and existing primitive paging bridge.
+`Atya.Foundation.Guards` handles programmer errors such as null `items` and null validated requests. `Atya.Foundation.Results` supplies the fleet-canonical `Result<T>`, `Error`, and `ErrorKind` primitives used by Mediator, Http, and Idempotency packages.
 
 ## Compatibility
 

@@ -1,5 +1,3 @@
-using Atya.Foundation.Primitives.Paging;
-
 namespace Atya.Data.Pagination.UnitTests;
 
 public sealed class PageRequestTests
@@ -57,17 +55,5 @@ public sealed class PageRequestTests
 
         result.IsFailure.Should().BeTrue();
         result.Error.Code.Should().Be(PaginationErrors.OffsetMustFitInt32Code);
-    }
-
-    [Fact]
-    public void ToPrimitiveRequest_ReturnsEquivalentPrimitiveRequest()
-    {
-        var request = PageRequest.Create(4, 10).Value!;
-
-        PagedRequest primitive = request.ToPrimitiveRequest();
-
-        primitive.PageNumber.Should().Be(4);
-        primitive.PageSize.Should().Be(10);
-        primitive.Skip.Should().Be(30);
     }
 }

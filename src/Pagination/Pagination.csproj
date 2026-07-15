@@ -28,7 +28,7 @@
 
   <ItemGroup Label="Runtime dependencies">
     <PackageReference Include="Atya.Foundation.Guards" />
-    <PackageReference Include="Atya.Foundation.Primitives" />
+    <PackageReference Include="Atya.Foundation.Results" />
   </ItemGroup>
 
 </Project>

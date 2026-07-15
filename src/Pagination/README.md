@@ -51,15 +51,11 @@ Console.WriteLine($"Has next page: {page.Value.HasNextPage}");
 
 ### PageRequest
 
-`PageRequest.Create` validates one-based page number and positive page size values and returns `Result<PageRequest>`. Successful requests expose `PageNumber`, `PageSize`, `Offset`, and `LongOffset`.
+`PageRequest.Create` validates one-based page number and positive page size values and returns `Result<PageRequest>` from `Atya.Foundation.Results`. Successful requests expose `PageNumber`, `PageSize`, `Offset`, and `LongOffset`.
 
 ### PagedResult
 
 `PagedResult.Create` combines current-page items with a validated request and the total count. The returned `PagedResult<T>` exposes `TotalPages`, `HasPreviousPage`, and `HasNextPage` without depending on any query provider.
-
-### Foundation.Primitives bridge
-
-`PageRequest.ToPrimitiveRequest()` converts to `Atya.Foundation.Primitives.Paging.PagedRequest` for callers that already use the lower-level primitive shape.
 
 ## Error Codes
 
@@ -73,7 +69,7 @@ Console.WriteLine($"Has next page: {page.Value.HasNextPage}");
 
 ## Why These Dependencies
 
-`Atya.Foundation.Guards` handles programmer errors such as null `items` and null validated requests. `Atya.Foundation.Primitives` supplies the fleet's primitive `Result<T>`, `Error`, and existing primitive paging bridge.
+`Atya.Foundation.Guards` handles programmer errors such as null `items` and null validated requests. `Atya.Foundation.Results` supplies the fleet-canonical `Result<T>`, `Error`, and `ErrorKind` primitives used by Mediator, Http, and Idempotency packages.
 
 ## Links
 

@@ -1,5 +1,5 @@
 using Atya.Foundation.Guards;
-using Atya.Foundation.Primitives.Results;
+using Atya.Foundation.Results;
 
 namespace Atya.Data.Pagination;
 

@@ -18,7 +18,7 @@ public static class Program
             .Value!;
 
         Console.WriteLine($"Page {page.PageNumber} of {page.TotalPages}");
-        Console.WriteLine($"Offset: {request.Offset}");
+        Console.WriteLine($"Offset: {request.LongOffset}");
         Console.WriteLine($"Has next page: {page.HasNextPage}");
     }
 }

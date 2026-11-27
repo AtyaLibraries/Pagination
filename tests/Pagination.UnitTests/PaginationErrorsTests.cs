@@ -15,6 +15,7 @@ public sealed class PaginationErrorsTests
         error.Kind.Should().Be(ErrorKind.Validation);
     }
 
+    [Obsolete]
     public static TheoryData<Func<Error>, string> ErrorFactories() =>
         new()
         {
@@ -23,5 +24,7 @@ public sealed class PaginationErrorsTests
             { PaginationErrors.OffsetMustFitInt32, PaginationErrors.OffsetMustFitInt32Code },
             { PaginationErrors.TotalCountMustNotBeNegative, PaginationErrors.TotalCountMustNotBeNegativeCode },
             { PaginationErrors.ItemCountMustNotExceedPageSize, PaginationErrors.ItemCountMustNotExceedPageSizeCode },
+            { PaginationErrors.ItemCountMustMatchTotal, PaginationErrors.ItemCountMustMatchTotalCode },
+            { PaginationErrors.MaxPageSizeMustBePositive, PaginationErrors.MaxPageSizeMustBePositiveCode },
         };
 }
